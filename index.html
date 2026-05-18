@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Sueño Pro" />
+  <title>Sueño Pro</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Tu descanso</p>
+        <h1 id="todayScore">--</h1>
+        <p id="scoreText">Registra tu sueño de hoy</p>
+      </div>
+      <button id="themeBtn" class="round">☾</button>
+    </section>
+
+    <section class="card grid2">
+      <label>Hora de dormir<input id="bedtime" type="time" value="23:00"></label>
+      <label>Hora de despertar<input id="wake" type="time" value="07:00"></label>
+      <label>Calidad<select id="quality"><option value="5">Excelente</option><option value="4">Buena</option><option value="3">Normal</option><option value="2">Mala</option><option value="1">Muy mala</option></select></label>
+      <label>Despertares<input id="wakeups" type="number" min="0" value="0"></label>
+    </section>
+
+    <section class="card">
+      <h2>Fases del sueño</h2>
+      <div class="grid3">
+        <label>Profundo<input id="deep" type="number" min="0" step="0.1" value="1.5"></label>
+        <label>REM<input id="rem" type="number" min="0" step="0.1" value="1.5"></label>
+        <label>Ligero<input id="light" type="number" min="0" step="0.1" value="5"></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Sonidos y eventos</h2>
+      <div class="grid3">
+        <label>Ronquidos min<input id="snore" type="number" min="0" value="0"></label>
+        <label>Hablar dormido<input id="talk" type="number" min="0" value="0"></label>
+        <label>Ruido ambiente<input id="noise" type="number" min="0" max="100" value="20"></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Salud</h2>
+      <div class="grid3">
+        <label>Pulso<input id="pulse" type="number" min="30" max="220" value="65"></label>
+        <label>Respiración<input id="breath" type="number" min="5" max="40" value="15"></label>
+        <label>Oxígeno %<input id="oxygen" type="number" min="70" max="100" value="97"></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Hábitos</h2>
+      <div class="chips">
+        <label><input type="checkbox" id="caffeine"> Cafeína</label>
+        <label><input type="checkbox" id="exercise"> Ejercicio</label>
+        <label><input type="checkbox" id="screen"> Pantalla tarde</label>
+        <label><input type="checkbox" id="stress"> Estrés</label>
+      </div>
+      <textarea id="notes" placeholder="Notas: sueños, cansancio, dolor, medicamentos..."></textarea>
+      <button id="saveBtn" class="primary">Guardar registro</button>
+    </section>
+
+    <section class="stats">
+      <div class="mini"><b id="avgHours">--</b><span>Promedio horas</span></div>
+      <div class="mini"><b id="avgScore">--</b><span>Score medio</span></div>
+      <div class="mini"><b id="totalDays">0</b><span>Días</span></div>
+    </section>
+
+    <section class="card">
+      <h2>Historial</h2>
+      <div id="history"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
